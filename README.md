@@ -50,6 +50,7 @@
 
 ## 1. 데이터 개요
 ### 1.1 데이터 출처 및 타깃 정의
+* 데이터 성격: EDA 및 ML 성능 비교를 위한 합성 데이터셋(Synthetically generated dataset)
 * 데이터 출처: [Kaggle – Spotify Dataset for Churn Analysis](https://www.kaggle.com/datasets/nabihazahid/spotify-dataset-for-churn-analysis/)
 * 타깃 변수: `is_churned` (1=이탈, 0=유지)
 * 주요 컬럼: 사용자 정보(나이, 성별 등), 서비스 이용(청취시간, 재생 수 등), 수익/광고(요금제, 광고청취)
@@ -125,9 +126,18 @@ Generated 데이터는 합성 과정 특성상 **비현실 값(음수)** 이 일
 ### 3.1 Random Forest (Final Model)
 - **선정 사유**: Bagging 앙상블을 통한 안정적인 예측력 및 최고 F1-Score 달성.
 - **성능 시각화**:
-| 혼동 행렬 (Confusion Matrix) | ROC 곡선 (ROC Curve) | PR 곡선 (PR Curve) |
-| :---: | :---: | :---: |
-| ![RF 혼동 행렬](02_training_report/images/ml_cm.png) | ![RF ROC 곡선](02_training_report/images/ml_roc.png) | ![RF PR 곡선](02_training_report/images/ml_pr.png) |
+<table width="100%">
+  <tr>
+    <td align="center" width="33%"><b>혼동 행렬 (Confusion Matrix)</b></td>
+    <td align="center" width="33%"><b>ROC 곡선 (ROC Curve)</b></td>
+    <td align="center" width="33%"><b>PR 곡선 (PR Curve)</b></td>
+  </tr>
+  <tr>
+    <td><img src="02_training_report/images/ml_cm.png" width="100%"></td>
+    <td><img src="02_training_report/images/ml_roc.png" width="100%"></td>
+    <td><img src="02_training_report/images/ml_pr.png" width="100%"></td>
+  </tr>
+</table>
 
 ### 3.2 Feature Importance (특성 중요도)
 모델이 이탈을 판단하는 데 가장 중요하게 본 변수는 **`ad_burden` (광고 부담도)** 와 **`satisfaction_score` (만족도 지수)** 입니다.
