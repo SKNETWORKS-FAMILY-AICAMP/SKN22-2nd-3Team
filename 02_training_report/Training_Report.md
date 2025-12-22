@@ -22,7 +22,7 @@
 
 ### 데이터 처리
 - **범주형 변수**: `One-Hot Encoding` 적용 (Gender, Country, Subscription Type 등).
-    - *참고*: 구독 유형(`Free`, `Premium`, `Family`, `Student`) 정보를 모두 활용하여 구독 형태에 따른 이탈 패턴을 학습했다.
+    - *참고*: 구독 유형(`Free`, `Premium`, `Student`) 정보를 모두 활용하여 구독 형태에 따른 이탈 패턴을 학습했다.
 - **불균형 데이터 해소**: `Borderline SMOTE` 기법을 통해 이탈 클래스의 학습 데이터를 증강하여 경계선 데이터 예측력을 강화했다. 
 
 ---
